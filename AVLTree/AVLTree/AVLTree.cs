@@ -101,5 +101,33 @@ namespace AVLTree
             parent.left = RotateL(parent.left);
             return RotateR(parent);
         }
+
+        public Node Balance(Node current)
+        {
+            int b = GetBalance(current);
+            if (b == 2)
+            {
+                if (GetBalance(current.left) < 0)
+                {
+                    current = RotateLR(current);
+                }
+                else
+                {
+                    current = RotateR(current);
+                }
+            }
+            else if (b == -2)
+            {
+                if (GetBalance(current.right) > 0)
+                {
+                    current = RotateRL(current);
+                }
+                else
+                {
+                    current = RotateL(current);
+                }
+            }
+            return current;
+        }
     }
 }
