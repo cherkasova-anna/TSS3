@@ -69,5 +69,9 @@ namespace AVLTree
             }            
         }
 
+        public int GetBalance(Node current)
+        {
+            return (GetHeight(current.left) - GetHeight(current.right));
+        }
     }
 }

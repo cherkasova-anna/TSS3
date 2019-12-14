@@ -61,5 +61,28 @@ namespace AVLTree.Tests
             h = t.GetHeight(t.root.right);
             Assert.AreEqual(h, 0);
         }
+
+        [Test]
+        public void TestGetBalance()
+        {
+            AVLTree t = new AVLTree(7);
+            t.Insert(t.root, new AVLTree.Node(5));
+            t.Insert(t.root, new AVLTree.Node(8));
+            t.Insert(t.root, new AVLTree.Node(6));
+
+            int b;
+            
+            b = t.GetBalance(t.root.left.right);
+            Assert.AreEqual(b, 0);
+
+            b = t.GetBalance(t.root.left);
+            Assert.AreEqual(b, -1);
+
+            b = t.GetBalance(t.root);
+            Assert.AreEqual(b, 1);
+
+            b = t.GetBalance(t.root.right);
+            Assert.AreEqual(b, 0);
+        }
     }
 }
