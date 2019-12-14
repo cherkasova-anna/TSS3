@@ -64,14 +64,22 @@ namespace AVLTree
             {
                 int lh = GetHeight(current.left);
                 int rh = GetHeight(current.right);
-                int height = lh > rh ? lh : rh;                
+                int height = lh > rh ? lh : rh;
                 return ++height;
-            }            
+            }
         }
 
         public int GetBalance(Node current)
         {
             return (GetHeight(current.left) - GetHeight(current.right));
+        }
+
+        public Node RotateR(Node parent)
+        {
+            Node point = parent.left;
+            parent.left = point.right;
+            point.right = parent;
+            return point;
         }
     }
 }

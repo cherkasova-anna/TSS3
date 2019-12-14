@@ -71,7 +71,7 @@ namespace AVLTree.Tests
             t.Insert(t.root, new AVLTree.Node(6));
 
             int b;
-            
+
             b = t.GetBalance(t.root.left.right);
             Assert.AreEqual(b, 0);
 
@@ -83,6 +83,23 @@ namespace AVLTree.Tests
 
             b = t.GetBalance(t.root.right);
             Assert.AreEqual(b, 0);
+        }
+
+        [Test]
+        public void TestRotateR()
+        {
+            AVLTree t = new AVLTree(7);
+            t.Insert(t.root, new AVLTree.Node(5));
+            t.Insert(t.root, new AVLTree.Node(8));
+            t.Insert(t.root, new AVLTree.Node(6));
+            t.Insert(t.root, new AVLTree.Node(4));
+ 
+            AVLTree.Node n = t.RotateR(t.root);
+            Assert.AreEqual(n.data, 5);
+            Assert.AreEqual(n.left.data, 4);
+            Assert.AreEqual(n.right.data, 7);
+            Assert.AreEqual(n.right.left.data, 6);
+            Assert.AreEqual(n.right.right.data, 8);
         }
     }
 }
