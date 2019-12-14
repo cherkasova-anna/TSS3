@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace AVLTree
-{    
+{
     public class AVLTree
     {
         public class Node
@@ -23,11 +23,11 @@ namespace AVLTree
         {
             root = new Node(data);
         }
-        
+
         public void Insert(Node current, Node n)
         {
             if (current == null)
-            {              
+            {
                 return;
             }
             if (n.data < current.data)
@@ -39,19 +39,34 @@ namespace AVLTree
                 else
                 {
                     Insert(current.left, n);
-                }                
+                }
             }
             else
             {
                 if (current.right == null)
                 {
-                    current.right = n;                    
+                    current.right = n;
                 }
                 else
                 {
                     Insert(current.right, n);
-                }               
+                }
             }
+        }
+
+        public int GetHeight(Node current)
+        {
+            if (current == null)
+            {
+                return -1;
+            }
+            else
+            {
+                int lh = GetHeight(current.left);
+                int rh = GetHeight(current.right);
+                int height = lh > rh ? lh : rh;                
+                return ++height;
+            }            
         }
 
     }
