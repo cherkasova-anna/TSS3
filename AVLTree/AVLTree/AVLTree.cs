@@ -24,6 +24,48 @@ namespace AVLTree
             root = new Node(data);
         }
 
+        public void Add(int data)
+        {
+            Node n = new Node(data);
+            if (root == null)
+            {
+                root = n;
+            }
+            else
+            {
+                root = BalancedInsert(root, n);
+            }
+        }
+        public Node BalancedInsert(Node current, Node n)
+        {
+            if (current == null)
+            {
+                return current;
+            }
+            if (n.data < current.data)
+            {
+                if (current.left == null)
+                {
+                    current.left = n;
+                }
+                else
+                {
+                    Insert(current.left, n);
+                }
+            }
+            else
+            {
+                if (current.right == null)
+                {
+                    current.right = n;
+                }
+                else
+                {
+                    Insert(current.right, n);
+                }
+            }
+            return Balance(current);
+        }
         public void Insert(Node current, Node n)
         {
             if (current == null)
