@@ -1,2 +1,9 @@
 
 *.lock
+
+AVLTree/.vs/AVLTree/v15/.suo
+*.pdb
+*.ide
+*.cache
+AVLTree/.vs/AVLTree/v15/Server/sqlite3/storage.ide-wal
+*.dll
