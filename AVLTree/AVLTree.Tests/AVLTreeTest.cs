@@ -93,13 +93,30 @@ namespace AVLTree.Tests
             t.Insert(t.root, new AVLTree.Node(8));
             t.Insert(t.root, new AVLTree.Node(6));
             t.Insert(t.root, new AVLTree.Node(4));
- 
+
             AVLTree.Node n = t.RotateR(t.root);
             Assert.AreEqual(n.data, 5);
             Assert.AreEqual(n.left.data, 4);
             Assert.AreEqual(n.right.data, 7);
             Assert.AreEqual(n.right.left.data, 6);
             Assert.AreEqual(n.right.right.data, 8);
+        }
+
+        [Test]
+        public void TestRotateL()
+        {
+            AVLTree t = new AVLTree(5);
+            t.Insert(t.root, new AVLTree.Node(4));
+            t.Insert(t.root, new AVLTree.Node(7));
+            t.Insert(t.root, new AVLTree.Node(6));
+            t.Insert(t.root, new AVLTree.Node(8));
+
+            AVLTree.Node n = t.RotateL(t.root);
+            Assert.AreEqual(n.data, 7);
+            Assert.AreEqual(n.left.data, 5);
+            Assert.AreEqual(n.right.data, 8);
+            Assert.AreEqual(n.left.left.data, 4);
+            Assert.AreEqual(n.left.right.data, 6);
         }
     }
 }
