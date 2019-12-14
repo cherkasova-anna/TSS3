@@ -118,5 +118,18 @@ namespace AVLTree.Tests
             Assert.AreEqual(n.left.left.data, 4);
             Assert.AreEqual(n.left.right.data, 6);
         }
+
+        [Test]
+        public void TestRotateRL()
+        {
+            AVLTree t = new AVLTree(1);
+            t.Insert(t.root, new AVLTree.Node(3));
+            t.Insert(t.root, new AVLTree.Node(2));
+
+            AVLTree.Node n = t.RotateRL(t.root);
+            Assert.AreEqual(n.data, 2);
+            Assert.AreEqual(n.left.data, 1);
+            Assert.AreEqual(n.right.data, 3);
+        }
     }
 }
