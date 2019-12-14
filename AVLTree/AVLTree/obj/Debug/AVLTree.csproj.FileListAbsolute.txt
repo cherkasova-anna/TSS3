@@ -1,0 +1,10 @@
+C:\Users\Анюта\source\repos\TSS3\AVLTree\AVLTree\bin\Debug\AVLTree.dll
+C:\Users\Анюта\source\repos\TSS3\AVLTree\AVLTree\bin\Debug\AVLTree.pdb
+C:\Users\Анюта\source\repos\TSS3\AVLTree\AVLTree\bin\Debug\nunit.framework.dll
+C:\Users\Анюта\source\repos\TSS3\AVLTree\AVLTree\bin\Debug\nunit.framework.pdb
+C:\Users\Анюта\source\repos\TSS3\AVLTree\AVLTree\bin\Debug\nunit.framework.xml
+C:\Users\Анюта\source\repos\TSS3\AVLTree\AVLTree\obj\Debug\AVLTree.csprojAssemblyReference.cache
+C:\Users\Анюта\source\repos\TSS3\AVLTree\AVLTree\obj\Debug\AVLTree.csproj.CoreCompileInputs.cache
+C:\Users\Анюта\source\repos\TSS3\AVLTree\AVLTree\obj\Debug\AVLTree.csproj.CopyComplete
+C:\Users\Анюта\source\repos\TSS3\AVLTree\AVLTree\obj\Debug\AVLTree.dll
+C:\Users\Анюта\source\repos\TSS3\AVLTree\AVLTree\obj\Debug\AVLTree.pdb

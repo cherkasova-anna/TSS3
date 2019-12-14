@@ -1,7 +1,9 @@
 using NUnit.Framework;
+using AVLTree;
 
 namespace AVLTree.Tests
 {
+    [TestFixture]
     public class AVLTreeTest
     {
         [SetUp]
@@ -10,9 +12,11 @@ namespace AVLTree.Tests
         }
 
         [Test]
-        public void Test1()
+        [TestCase(5)]
+        public void TestConstructor(int data)
         {
-            Assert.Pass();
+            AVLTree t = new AVLTree(data);
+            Assert.AreEqual(data, t.root.data);
         }
     }
 }

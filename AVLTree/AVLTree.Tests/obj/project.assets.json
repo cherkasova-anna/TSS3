@@ -1645,6 +1645,15 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
+      },
+      "AVLTree/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/AVLTree.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AVLTree.dll": {}
+        }
       }
     }
   },
@@ -5741,10 +5750,16 @@
         "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xmldocument.nuspec"
       ]
+    },
+    "AVLTree/1.0.0": {
+      "type": "project",
+      "path": "../AVLTree/AVLTree.csproj",
+      "msbuildProject": "../AVLTree/AVLTree.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
+      "AVLTree >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 15.8.0",
       "Microsoft.NETCore.App >= 2.1.0",
       "NUnit3TestAdapter >= 3.10.0",
@@ -5782,7 +5797,11 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Анюта\\source\\repos\\TSS3\\AVLTree\\AVLTree\\AVLTree.csproj": {
+              "projectPath": "C:\\Users\\Анюта\\source\\repos\\TSS3\\AVLTree\\AVLTree\\AVLTree.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

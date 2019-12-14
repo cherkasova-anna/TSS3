@@ -8,6 +8,20 @@ namespace AVLTree
 {    
     public class AVLTree
     {
-        
+        public class Node
+        {
+            public int data;
+            public Node left = null;
+            public Node right = null;
+            public Node(int data)
+            {
+                this.data = data;
+            }
+        }
+        public Node root;
+        public AVLTree(int data)
+        {
+            root = new Node(data);
+        }
     }
 }
