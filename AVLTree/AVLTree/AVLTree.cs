@@ -95,5 +95,11 @@ namespace AVLTree
             parent.right = RotateR(parent.right);
             return RotateL(parent);
         }
+
+        public Node RotateLR(Node parent)
+        {
+            parent.left = RotateL(parent.left);
+            return RotateR(parent);
+        }
     }
 }
