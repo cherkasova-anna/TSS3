@@ -184,7 +184,7 @@ namespace AVLTree.Tests
             Assert.AreEqual(n.left.data, 1);
             Assert.AreEqual(n.right.data, 3);
         }
-         
+
         [Test]
         public void TestBalancedInsert()
         {
@@ -200,7 +200,7 @@ namespace AVLTree.Tests
             Assert.AreEqual(t.root.data, 2);
             Assert.AreEqual(t.root.left.data, 1);
             Assert.AreEqual(t.root.right.data, 3);
-        } 
+        }
 
         [Test]
         public void TestAdd()
@@ -212,6 +212,20 @@ namespace AVLTree.Tests
             Assert.AreEqual(t.root.data, 2);
             Assert.AreEqual(t.root.left.data, 1);
             Assert.AreEqual(t.root.right.data, 3);
+        }
+
+        [Test]
+        public void TestFind()
+        {
+            AVLTree t = new AVLTree(1);
+            t.Add(2);
+            t.Add(3);
+
+            AVLTree.Node n = t.Find(2, t.root);
+            Assert.AreEqual(n, t.root);
+
+            n = t.Find(4, t.root);
+            Assert.AreEqual(n, null);
         }
     }
 }

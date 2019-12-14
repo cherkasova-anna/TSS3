@@ -171,5 +171,28 @@ namespace AVLTree
             }
             return current;
         }
+
+        public Node Find(int data, Node current)
+        {            
+            if (current == null)
+            {
+                return null;
+            }
+            if (data < current.data)
+            {
+                return Find(data, current.left);
+            }
+            else
+            {
+                if (data == current.data)
+                {
+                    return current;
+                }
+                else
+                {
+                    return Find(data, current.right);
+                }               
+            }
+        }
     }
 }
