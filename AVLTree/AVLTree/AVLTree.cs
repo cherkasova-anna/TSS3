@@ -33,10 +33,10 @@ namespace AVLTree
             }
             else
             {
-                root = BalancedInsert(root, n);
+                root = Add(root, n);
             }
         }
-        public Node BalancedInsert(Node current, Node n)
+        public Node Add(Node current, Node n)
         {
             if (current == null)
             {
@@ -173,7 +173,7 @@ namespace AVLTree
         }
 
         public Node Find(int data, Node current)
-        {            
+        {
             if (current == null)
             {
                 return null;
@@ -191,8 +191,53 @@ namespace AVLTree
                 else
                 {
                     return Find(data, current.right);
-                }               
+                }
             }
+        }
+
+        public Node Delete(Node current, int data)
+        {
+            if (current == null)
+            {
+                return null;
+            }
+            if (data < current.data)
+            {
+                current.left = Delete(current.left, data);
+                current = Balance(current);
+            }
+            else
+            {
+                if (data > current.data)
+                {
+                    current.right = Delete(current.right, data);
+                    current = Balance(current);
+                }
+                else
+                {
+                    if (current.right == null)
+                    {
+                        return current.left;
+                    }
+                    else
+                    {
+                        Node parent = current.right;
+                        while (parent.left != null)
+                        {
+                            parent = parent.left;
+                        }
+                        current.data = parent.data;
+                        current.right = Delete(current.right, parent.data);
+                        current = Balance(current);
+                    }
+                }
+            }
+            return current;
+        }
+
+        public void Delete(int data)
+        {
+            root = Delete(root, data);
         }
     }
 }

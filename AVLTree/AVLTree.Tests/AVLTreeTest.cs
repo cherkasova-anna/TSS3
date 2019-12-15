@@ -186,13 +186,13 @@ namespace AVLTree.Tests
         }
 
         [Test]
-        public void TestBalancedInsert()
+        public void TestAdd_InSubtree()
         {
             AVLTree t = new AVLTree(1);
             AVLTree.Node n;
-            n = t.BalancedInsert(t.root, new AVLTree.Node(2));
+            n = t.Add(t.root, new AVLTree.Node(2));
             Assert.AreEqual(1, n.data);
-            n = t.BalancedInsert(t.root, new AVLTree.Node(3));
+            n = t.Add(t.root, new AVLTree.Node(3));
             Assert.AreEqual(2, n.data);
 
             t.root = n;
@@ -226,6 +226,42 @@ namespace AVLTree.Tests
 
             n = t.Find(4, t.root);
             Assert.AreEqual(n, null);
+        }
+
+        [Test]
+        public void TestDelete_FromSubtree()
+        {
+            AVLTree t = new AVLTree(1);
+            t.Add(2);
+            t.Add(3);
+            t.Add(0);
+
+            t.root = t.Delete(t.root, 3);
+            Assert.AreEqual(t.root.data, 1);
+            Assert.AreEqual(t.root.left.data, 0);
+            Assert.AreEqual(t.root.right.data, 2);
+
+            t.root = t.Delete(t.root, 2);
+            Assert.AreEqual(t.root.data, 1);
+            Assert.AreEqual(t.root.left.data, 0);
+        }
+
+        [Test]
+        public void TestDelete()
+        {
+            AVLTree t = new AVLTree(1);
+            t.Add(2);
+            t.Add(3);
+            t.Add(0);
+
+            t.Delete(3);
+            Assert.AreEqual(t.root.data, 1);
+            Assert.AreEqual(t.root.left.data, 0);
+            Assert.AreEqual(t.root.right.data, 2);
+
+            t.Delete(2);
+            Assert.AreEqual(t.root.data, 1);
+            Assert.AreEqual(t.root.left.data, 0);
         }
     }
 }
